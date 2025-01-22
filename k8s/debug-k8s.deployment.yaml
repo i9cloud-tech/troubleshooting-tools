@@ -19,7 +19,7 @@ spec:
     spec:
       serviceAccountName: argocd-aws
       containers:
-      - image: public.ecr.aws/q0a7a5m8/amicci-aws-eks:v1.
+      - image: public.ecr.aws/q0a7a5m8/amicci-aws-eks:v1.3
         name: amicci-aws-eks
         command:
           #- /bin/bash

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: debug-k8s
+  name: debug-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: debug-k8s
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: debug-k8s
+    spec:
+      serviceAccountName: argocd-aws
+      containers:
+      - image: public.ecr.aws/q0a7a5m8/amicci-aws-eks:v1.2
+        name: amicci-aws-eks
+        command:
+          #- /bin/bash
+          #- "-c"
+          #- |
+            #aws eks update-kubeconfig --name production
+            #cert=`cat ~/.kube/config | grep autho | awk '{print $2}'`
+            #aws eks update-kubeconfig --name stage
+            #kubectl -n argocd patch secret argocd-prod-cluster -p='{"awsAuthConfig": {"clusterName": "production","roleARN": "arn:aws:iam::149592216170:role/argocd-aws-role"}, "tlsClientConfig": {"insecure": false, "caData": "'$cert'"}}'
+         - sleep
+         - infinity
+status: {}

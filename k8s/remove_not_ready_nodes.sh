@@ -9,8 +9,8 @@ main() {
   for node in $nodes; do
       echo "Processando nó obsoleto: $node"
       aws_intance_ids=$(get_aws_instance_ids $node)
-      cordon_node $node
-      drain_node $node
+      #cordon_node $node
+      #drain_node $node
       remove_node_from_cluster $node
       remove_aws_instance $aws_intance_ids
   done

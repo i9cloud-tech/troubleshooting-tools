@@ -1,6 +1,6 @@
 #!/bin/bash
 
-K9S_VERSION='v0.50.18'
+K9S_VERSION='v0.51.0'
 wget https://github.com/derailed/k9s/releases/download/${K9S_VERSION}/k9s_linux_amd64.deb
 sudo dpkg -i k9s_linux_amd64.deb
 

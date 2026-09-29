@@ -18,6 +18,7 @@ add_groups_to_repo() {
   gh api -X PUT \
     /orgs/amicci-labs/teams/$team/repos/amicci-labs/$repo \
     -f permission=$permission | jq
+  echo "Added $team team to $repo with $permission permission"
 }
 
 main "$@"
